@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Multiplication Game</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h1>Multiplication Game</h1>
+		<!-- Game Container -->
+		<div class="game-container">
+			<div id="first-card">x</div>
+			<div id="vs">X</div>
+			<div id="second-card">x</div>
+		</div>
+		<!-- Input -->
+		<div id="input-container">
+			<input type="number" id="player1-input" placeholder="First Player" />
+			<input
+				type="number"
+				id="player2-input"
+				placeholder="Second Player"
+			/><br />
+			<button id="submit-btn">Submit</button>
+		</div>
+
+		<hr />
+
+		<!-- Player Scores -->
+		<div id="players-score">
+			<h2>Player Scores</h2>
+			<div id="player1-score">
+				First Player : <span id="score-player1">0</span>
+			</div>
+			<div id="player2-score">
+				Second Player : <span id="score-player2">0</span>
+			</div>
+		</div>
+
+		<script src="main.js"></script>
+	</body>
+</html>
