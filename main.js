@@ -40,12 +40,12 @@ submitBtn.addEventListener("click", () => {
 		alert("Both players win!");
 		scorePlayer1.textContent = parseInt(scorePlayer1.textContent) + 1;
 		scorePlayer2.textContent = parseInt(scorePlayer2.textContent) + 1;
-	} else if (player2_answer === correct_answer) {
-		alert("Player 2 wins!");
 		scorePlayer2.textContent = parseInt(scorePlayer2.textContent) + 1;
 	} else if (player1_answer === correct_answer) {
 		alert("Player 1 wins!");
 		scorePlayer1.textContent = parseInt(scorePlayer1.textContent) + 1;
+	} else if (player2_answer === correct_answer) {
+		alert("Player 2 wins!");
 	} else {
 		alert("No one wins. Try again!");
 		return; // Exit the function early if no one wins, so we don't clear the inputs or generate new numbers
