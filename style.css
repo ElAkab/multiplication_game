@@ -87,3 +87,8 @@ hr {
 #player2-score {
 	color: #d9534f;
 }
+
+.btn-disabled {
+	opacity: 0.4;
+	cursor: not-allowed !important;
+}
