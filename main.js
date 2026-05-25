@@ -7,21 +7,21 @@ function generateRandomNumbers() {
 	const firstCard = document.getElementById("first-card");
 	const secondCard = document.getElementById("second-card");
 
-	let correct_answer = first_factor * second_factor;
+	let product = first_factor * second_factor;
 
 	// Display the random numbers on the respective cards
 	firstCard.textContent = first_factor;
 	secondCard.textContent = second_factor;
-	return [first_factor, second_factor, correct_answer];
+	return [first_factor, second_factor, product];
 }
 
-let [first_factor, second_factor, correct_answer] = generateRandomNumbers();
+let [first_factor, second_factor, product] = generateRandomNumbers();
 // Calculate the correct answer by multiplying the two random numbers
 
 // Log the random numbers and the correct answer to the console for debugging purposes
 console.log(first_factor);
 console.log(second_factor);
-console.log(correct_answer);
+console.log(product);
 
 // Get the button element and add a click event listener to it
 const submitBtn = document.getElementById("submit-btn");
@@ -56,14 +56,14 @@ submitBtn.addEventListener("click", () => {
 	const player1_answer = parseInt(input1.value);
 	const player2_answer = parseInt(input2.value);
 	// 4. Display the result in the output field based on the players' answers
-	if (player1_answer === correct_answer && player2_answer === correct_answer) {
+	if (player1_answer === product && player2_answer === product) {
 		alert("Both players win!");
 		scorePlayer1.textContent = parseInt(scorePlayer1.textContent) + 1;
 		scorePlayer2.textContent = parseInt(scorePlayer2.textContent) + 1;
-	} else if (player1_answer === correct_answer) {
+	} else if (player1_answer === product) {
 		alert("Player 1 wins!");
 		scorePlayer1.textContent = parseInt(scorePlayer1.textContent) + 1;
-	} else if (player2_answer === correct_answer) {
+	} else if (player2_answer === product) {
 		alert("Player 2 wins!");
 		scorePlayer2.textContent = parseInt(scorePlayer2.textContent) + 1;
 	} else {
@@ -77,11 +77,11 @@ submitBtn.addEventListener("click", () => {
 	updateButtonState();
 
 	// 6. Generate new random numbers for the next
-	const [new_first_factor, new_second_factor, new_correct_answer] =
+	const [new_first_factor, new_second_factor, new_product] =
 		generateRandomNumbers();
 
 	// 7. Update the correct answer for the next round
-	correct_answer = new_correct_answer;
+	product = new_product;
 });
 
 let modal = document.createElement("div");
