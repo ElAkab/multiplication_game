@@ -1,26 +1,26 @@
 // Generate two random numbers between 0 and 9
 function generateRandomNumbers() {
-	const first_product = Math.floor(Math.random() * 10);
-	const second_product = Math.floor(Math.random() * 10);
+	const first_factor = Math.floor(Math.random() * 10);
+	const second_factor = Math.floor(Math.random() * 10);
 
 	// Get the card elements from the DOM to display the random numbers
 	const firstCard = document.getElementById("first-card");
 	const secondCard = document.getElementById("second-card");
 
-	let correct_answer = first_product * second_product;
+	let correct_answer = first_factor * second_factor;
 
 	// Display the random numbers on the respective cards
-	firstCard.textContent = first_product;
-	secondCard.textContent = second_product;
-	return [first_product, second_product, correct_answer];
+	firstCard.textContent = first_factor;
+	secondCard.textContent = second_factor;
+	return [first_factor, second_factor, correct_answer];
 }
 
-let [first_product, second_product, correct_answer] = generateRandomNumbers();
+let [first_factor, second_factor, correct_answer] = generateRandomNumbers();
 // Calculate the correct answer by multiplying the two random numbers
 
 // Log the random numbers and the correct answer to the console for debugging purposes
-console.log(first_product);
-console.log(second_product);
+console.log(first_factor);
+console.log(second_factor);
 console.log(correct_answer);
 
 // Get the button element and add a click event listener to it
@@ -77,9 +77,25 @@ submitBtn.addEventListener("click", () => {
 	updateButtonState();
 
 	// 6. Generate new random numbers for the next
-	const [new_first_product, new_second_product, new_correct_answer] =
+	const [new_first_factor, new_second_factor, new_correct_answer] =
 		generateRandomNumbers();
 
 	// 7. Update the correct answer for the next round
 	correct_answer = new_correct_answer;
 });
+
+let modal = document.createElement("div");
+modal.classList.add("modal");
+modal.style.display = "block";
+modal.innerHTML = `
+	<div class="modal-content">
+		<h3>Player </h3>
+	</div>
+`;
+
+const startGameBtn = modal.querySelector("#start-game-btn");
+startGameBtn.addEventListener("click", () => {
+	modal.style.display = "none";
+});
+
+document.body.appendChild(modal);
