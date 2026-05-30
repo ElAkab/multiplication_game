@@ -30,6 +30,7 @@ const submitBtn = document.getElementById("submit-btn");
 const input1 = document.getElementById("player1-input");
 const input2 = document.getElementById("player2-input");
 
+// State management of the submit button based on the input values
 function updateButtonState() {
 	if (input1.value.trim() !== "" || input2.value.trim() !== "") {
 		submitBtn.disabled = false; // Enable the button if both input fields are not empty
